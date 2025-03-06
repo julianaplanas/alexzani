@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 60 100% 98%;
+  --foreground: 240 10% 20%;
+
+  --primary: 40 100% 90%;
+  --primary-foreground: 40 30% 30%;
+
+  --secondary: 200 80% 90%;
+  --secondary-foreground: 200 30% 30%;
+
+  --accent: 25 100% 90%;
+  --accent-foreground: 25 30% 30%;
+
+  --muted: 40 20% 96%;
+  --muted-foreground: 240 5% 45%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 20%;
+
+  --border: 240 5% 90%;
+  --input: 240 5% 90%;
+
+  --ring: 40 100% 80%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+

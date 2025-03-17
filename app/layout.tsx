@@ -8,10 +8,13 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Educator's Personal Website",
-  description: "Personal website for an educator offering thesis guidance and creative writing courses",
-    generator: 'v0.dev'
-}
+  title: "Alex Zani",
+  description: "Página personal de Alex Zani",
+  generator: "v0.dev",
+  icons: {
+    icon: "/favicon.ico", 
+  },
+};
 
 export default function RootLayout({
   children,

@@ -3,6 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Book, Menu, X } from "lucide-react"
+import Image from "next/image";
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,29 +15,28 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <Book className="h-8 w-8 text-primary-foreground" />
-          <span className="text-xl font-bold">Nombre del Educador</span>
-        </Link>
+      <div className="container flex items-center justify-between px-4 py-4 mx-auto">
+      <Link href="/" className="flex items-center gap-2">
+        <Image src="/logos/logo.png" alt="Logo" width={150} height={150} />
+      </Link>
 
         {/* Mobile menu button */}
         <button className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-8">
-          <Link href="/" className="font-medium hover:text-primary-foreground transition-colors">
+        <nav className="hidden gap-8 md:flex">
+          <Link href="/" className="font-medium transition-colors hover:text-primary-foreground">
             Inicio
           </Link>
-          <Link href="/rumbo-a-la-tesis" className="font-medium hover:text-primary-foreground transition-colors">
+          <Link href="/rumbo-a-la-tesis" className="font-medium transition-colors hover:text-primary-foreground">
             Rumbo a la Tesis
           </Link>
-          <Link href="/escritura-creativa" className="font-medium hover:text-primary-foreground transition-colors">
+          <Link href="/escritura-creativa" className="font-medium transition-colors hover:text-primary-foreground">
             Escritura Creativa
           </Link>
-          <Link href="/newsletter" className="font-medium hover:text-primary-foreground transition-colors">
+          <Link href="/newsletter" className="font-medium transition-colors hover:text-primary-foreground">
             Sumate al Newsletter
           </Link>
         </nav>
@@ -43,31 +44,31 @@ const Navbar = () => {
 
       {/* Mobile navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-white py-4 px-4 flex flex-col gap-4">
+        <nav className="flex flex-col gap-4 px-4 py-4 bg-white md:hidden">
           <Link
             href="/"
-            className="font-medium hover:text-primary-foreground transition-colors py-2"
+            className="py-2 font-medium transition-colors hover:text-primary-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Inicio
           </Link>
           <Link
             href="/rumbo-a-la-tesis"
-            className="font-medium hover:text-primary-foreground transition-colors py-2"
+            className="py-2 font-medium transition-colors hover:text-primary-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Rumbo a la Tesis
           </Link>
           <Link
             href="/escritura-creativa"
-            className="font-medium hover:text-primary-foreground transition-colors py-2"
+            className="py-2 font-medium transition-colors hover:text-primary-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Escritura Creativa
           </Link>
           <Link
             href="/newsletter"
-            className="font-medium hover:text-primary-foreground transition-colors py-2"
+            className="py-2 font-medium transition-colors hover:text-primary-foreground"
             onClick={() => setIsMenuOpen(false)}
           >
             Sumate al Newsletter

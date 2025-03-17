@@ -28,12 +28,12 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center md:w-1/2">
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <div className="relative w-64 h-64 overflow-hidden rounded-full md:w-80 md:h-80">
                 <Image
-                  src="/placeholder.svg?height=320&width=320"
-                  alt="Ilustración de libros y elementos educativos"
+                  src="/feriadellibro.jpeg"
+                  alt="Foto de Alex"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -42,21 +42,10 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-muted">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
-            <div className="flex justify-center md:w-1/3">
-              <div className="relative w-64 h-64 overflow-hidden rounded-full">
-                <Image
-                  src="/feriadellibro.jpeg?height=256&width=256"
-                  alt="Foto del educador"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="space-y-4 md:w-2/3">
-              <h2>Sobre mí</h2>
+      <section className="flex justify-center py-16 bg-muted">
+        <div className="container max-w-3xl px-6 mx-auto text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Sobre mí</h2>
+          <div className="mt-6 space-y-6 text-lg leading-relaxed text-gray-700">
               <p>
                 Soy Alex Zani y nací en un caluroso verano de 1992 en Santiago del Estero. Desde que tengo uso de razón, siempre me gustó leer y escribir, actividades que comencé a realizar desde muy temprana edad. Más tarde que pronto, descubrí la docencia. Esta es mi historia.
               </p>
@@ -78,7 +67,6 @@ export default function Home() {
               <p>
               Cada capítulo de mi vida se escribe día a día, entre la pasión por las letras y el compromiso con el saber. En estos últimos años, he descubierto que el camino académico no es solo intelectual, sino también emocional, y está profundamente atravesado por la creatividad. Tengo el firme compromiso de socializar lo aprendido y de ayudar a otrxs a cumplir sus objetivos. En esta página encontrarán mis propuestas, fruto de un camino que busca conectar, transformar y encender nuevas historias.
               </p>
-            </div>
           </div>
         </div>
       </section>
@@ -88,10 +76,6 @@ export default function Home() {
         <div className="container px-4 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4">Instituciones que confiaron en mi trabajo</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground">
-              He colaborado con prestigiosas instituciones académicas en el desarrollo de programas educativos y
-              talleres.
-            </p>
           </div>
 
           <div className="grid items-center grid-cols-2 gap-8 md:grid-cols-4 justify-items-center">
@@ -115,7 +99,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center w-32 h-32">
               <Image
-                src="/logos/uba.jpg?height=128&width=128"
+                src="/logos/uba.png?height=128&width=128"
                 alt="Logo Universidad 3"
                 width={128}
                 height={128}
@@ -124,7 +108,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center w-32 h-32">
               <Image
-                src="/logos/unam.jpeg?height=128&width=128"
+                src="/logos/unam.png?height=128&width=128"
                 alt="Logo Universidad 4"
                 width={128}
                 height={128}
@@ -176,7 +160,7 @@ export default function Home() {
         <div className="container px-4 mx-auto text-center">
           <h2 className="mb-4 text-accent-foreground">¿Listo para comenzar tu camino?</h2>
           <p className="max-w-2xl mx-auto mb-8 text-accent-foreground/90">
-            Ya sea que estés trabajando en tu tesis o quieras mejorar tus habilidades de escritura, estoy aquí para
+            Ya sea que estés trabajando en tu tesis o quieras mejorar tus habilidades de escritura, estoy acá para
             acompañarte.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

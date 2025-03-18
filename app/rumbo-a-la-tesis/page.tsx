@@ -23,12 +23,12 @@ export default function RumboALaTesis() {
               </Button>
             </div>
             <div className="flex justify-center md:w-1/2">
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <div className="relative w-64 h-64 overflow-hidden rounded-full md:w-80 md:h-80">
                 <Image
-                  src="/placeholder.svg?height=320&width=320"
-                  alt="Ilustración de libros y elementos de tesis"
+                  src="/rumbotesis.png"
+                  alt="Foto de Alex"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -47,36 +47,35 @@ export default function RumboALaTesis() {
               </p>
             </div>
             <div className="p-8 rounded-lg md:w-1/2 bg-muted">
-              <h3 className="mb-4 text-xl font-bold">¿Por qué "Rumbo a la Tesis" es diferente?</h3>
+              <h3 className="mb-4 text-xl font-bold">🚀 ¿Por qué <span className="font-bold">"Rumbo a la Tesis"</span> es diferente?</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Clases ON DEMAND – Aprendé a tu ritmo con módulos estructurados que te guían paso a paso. 
-                  </span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Clases ON DEMAND 🎥</strong> – Aprendé a tu ritmo con módulos estructurados que te guían paso a paso.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Recursos exclusivos: accedé a una lista de recursos que harán que tu camino sea mucho más sencillo y que no vuelvas a encontrarte frente a la hoja en blanco. </span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Recursos exclusivos 📚:</strong> accedé a una lista de recursos que harán que tu camino sea mucho más sencillo y que no vuelvas a encontrarte frente a la hoja en blanco.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Mentorías grupales – No más dudas sin respuesta. Encuentros en vivo para recibir feedback real sobre todo el proceso de escritura.</span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Mentorías grupales 🤝</strong> – No más dudas sin respuesta. Encuentros en vivo para recibir feedback real sobre todo el proceso de escritura.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Corrección y devolución de todos tus avances – No escribís solo/a, te acompañamos en cada etapa.</span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Corrección y devolución de todos tus avances ✍️</strong> – No escribís solo/a, te acompañamos en cada etapa.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Calendario de planificación personalizado – Para que gestiones tu propio tiempo y avances sin abrumarte. Sin prisa, pero sin pausa.</span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Calendario de planificación personalizado 📅</strong> – Para que gestiones tu propio tiempo y avances sin abrumarte. Sin prisa, pero sin pausa.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Tareas pequeñas, avances constantes – Un sistema diseñado para progresar sin sentirte bloqueado/a.</span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Tareas pequeñas, avances constantes ✅</strong> – Un sistema diseñado para progresar sin sentirte bloqueado/a.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground shrink-0 mt-0.5" />
-                  <span>Mentalidad y motivación – Vencé el síndrome del impostor y el miedo al fracaso con estrategias probadas.</span>
+                  <span className="text-lg">✔️</span>
+                  <span><strong>Mentalidad y motivación 🔥</strong> – Vencé el síndrome del impostor y el miedo al fracaso con estrategias probadas.</span>
                 </li>
               </ul>
             </div>
@@ -89,9 +88,6 @@ export default function RumboALaTesis() {
         <div className="container px-4 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-secondary-foreground">Nuestros Servicios</h2>
-            <p className="max-w-2xl mx-auto text-secondary-foreground/80">
-              Ofrezco diferentes modalidades de acompañamiento para adaptarme a tus necesidades específicas.
-            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -127,9 +123,6 @@ export default function RumboALaTesis() {
                 <FileText className="w-6 h-6 text-accent-foreground" />
               </div>
               <h3 className="mb-2 text-xl font-bold">Revisión y Feedback</h3>
-              <p className="mb-4 text-muted-foreground">
-                Revisión detallada de tus avances con feedback constructivo para mejorar la calidad de tu trabajo.
-              </p>
               <ul className="mb-4 space-y-2">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 mt-1 text-accent-foreground shrink-0" />
@@ -179,9 +172,6 @@ export default function RumboALaTesis() {
         <div className="container px-4 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4">Nuestro Proceso</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground">
-              Un enfoque estructurado para guiarte paso a paso en la elaboración de tu tesis.
-            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-4">
@@ -237,14 +227,11 @@ export default function RumboALaTesis() {
         <div className="container px-4 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4">Testimonios</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground">
-              Escucha las experiencias de estudiantes que han participado en el programa Rumbo a la Tesis.
-            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Instagram Embedded Video 1 */}
-            <div className="w-full overflow-hidden rounded-lg aspect-square bg-muted">
+            <div className="w-full overflow-hidden rounded-lg aspect-[9/16] bg-muted">
               <div>
                 <blockquote 
                   className="instagram-media"
@@ -262,15 +249,14 @@ export default function RumboALaTesis() {
                     width: "99.375%",
                   }}
                 ></blockquote>
-                <script async src="https://www.instagram.com/embed.js"></script>
               </div>
             </div>
+            
             {/* Instagram Embedded Video 2 */}
-            <div className="w-full overflow-hidden rounded-lg aspect-square bg-muted">
+            <div className="w-full overflow-hidden rounded-lg aspect-[9/16] bg-muted">
               <div>
                 <blockquote
                   className="instagram-media"
-                  data-instgrm-captioned
                   data-instgrm-permalink="https://www.instagram.com/reel/DDZs8S5RIYA/?utm_source=ig_embed&amp;utm_campaign=loading"
                   data-instgrm-version="14"
                   style={{
@@ -285,12 +271,11 @@ export default function RumboALaTesis() {
                     width: "99.375%",
                   }}
                 ></blockquote>
-                <script async src="https://www.instagram.com/embed.js"></script>
               </div>
             </div>
 
             {/* Instagram Embedded Video 3 */}
-            <div className="w-full overflow-hidden rounded-lg aspect-square bg-muted">
+            <div className="w-full overflow-hidden rounded-lg aspect-[9/16] bg-muted">
               <div>
                 <blockquote
                   className="instagram-media"
@@ -308,9 +293,9 @@ export default function RumboALaTesis() {
                     width: "99.375%",
                   }}
                 ></blockquote>
-                <script async src="https://www.instagram.com/embed.js"></script>
               </div>
             </div>
+            <script async src="https://www.instagram.com/embed.js"></script>
           </div>
         </div>
       </section>

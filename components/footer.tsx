@@ -15,22 +15,30 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-6">
-            <Link
-              href="https://www.instagram.com/mellamoalexz/"
-              className="transition-opacity text-secondary-foreground hover:opacity-80"
-            >
-              <Instagram className="w-6 h-6" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link
-              href="https://www.instagram.com/rumboalatesis/"
-              className="transition-opacity text-secondary-foreground hover:opacity-80"
-            >
-              <Instagram className="w-6 h-6" />
-              <span className="sr-only">Instagram</span>
-            </Link>
+          <div className="flex items-center gap-6">
+            {/* Instagram Link 1 - MeLlamoAlexz */}
+            <div className="flex items-center gap-2">
+              <Link
+                href="https://www.instagram.com/mellamoalexz/"
+                className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
+              >
+                <Instagram className="w-6 h-6" />
+                <span className="text-sm font-medium">@mellamoalexz</span>
+              </Link>
+            </div>
+
+            {/* Instagram Link 2 - Rumbo a la Tesis */}
+            <div className="flex items-center gap-2">
+              <Link
+                href="https://www.instagram.com/rumboalatesis/"
+                className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
+              >
+                <Instagram className="w-6 h-6" />
+                <span className="text-sm font-medium">@rumboalatesis</span>
+              </Link>
+            </div>
           </div>
+
         </div>
 
         <div className="pt-8 mt-8 text-center border-t border-secondary-foreground/20 text-secondary-foreground/70">

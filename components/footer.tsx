@@ -17,29 +17,39 @@ const Footer = () => {
 
           <div className="flex items-center gap-6">
             {/* Instagram Link 1 - MeLlamoAlexz */}
-            <div className="flex items-center gap-2">
-              <Link
-                href="https://www.instagram.com/mellamoalexz/"
-                className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
-              >
-                <Instagram className="w-6 h-6" />
-                <span className="text-sm font-medium">@mellamoalexz</span>
-              </Link>
-            </div>
+              <div className="flex items-center gap-2">
+                <Link
+                  href="https://www.instagram.com/mellamoalexz/"
+                  className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span className="text-sm font-medium">@mellamoalexz</span>
+                </Link>
+              </div>
 
-            {/* Instagram Link 2 - Rumbo a la Tesis */}
-            <div className="flex items-center gap-2">
-              <Link
-                href="https://www.instagram.com/rumboalatesis/"
-                className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
-              >
-                <Instagram className="w-6 h-6" />
-                <span className="text-sm font-medium">@rumboalatesis</span>
-              </Link>
+              {/* Instagram Link 2 - Rumbo a la Tesis */}
+              <div className="flex items-center gap-2">
+                <Link
+                  href="https://www.instagram.com/rumboalatesis/"
+                  className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span className="text-sm font-medium">@rumboalatesis</span>
+                </Link>
+              </div>
+
+              {/* 📩 Email Link */}
+              <div className="flex items-center gap-2">
+                <Link
+                  href="mailto:mellamoalexzani@gmail.com"
+                  className="flex items-center gap-2 transition-opacity text-secondary-foreground hover:opacity-80"
+                >
+                  <Mail className="w-6 h-6" />
+                  <span className="text-sm font-medium">mellamoalexzani@gmail.com</span>
+                </Link>
+              </div>
             </div>
           </div>
-
-        </div>
 
         <div className="pt-8 mt-8 text-center border-t border-secondary-foreground/20 text-secondary-foreground/70">
           <p>© {new Date().getFullYear()} Alex Zani. Todos los derechos reservados.</p>

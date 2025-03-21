@@ -1,17 +1,23 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useState } from "react";
 
 export default function Home() {
+  const [showFullText, setShowFullText] = useState(false);
   return (
     <div>
       {/* Hero Section */}
       <section className="py-16 bg-primary md:py-24">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
+          <div className="flex flex-col items-center gap-12 md:flex-row md:gap-24">
+            
+            {/* Left Text Section */}
             <div className="space-y-6 md:w-1/2">
-              <h1 className="text-primary-foreground">Educación y Acompañamiento Académico</h1>
+              <h1 className="text-4xl font-bold text-primary-foreground">Educación y Acompañamiento Académico</h1>
               <p className="max-w-md text-lg text-primary-foreground/90">
                 Guía personalizada para estudiantes universitarios en su camino hacia la tesis y el desarrollo de
                 habilidades de escritura creativa.
@@ -27,46 +33,70 @@ export default function Home() {
                 </Button>
               </div>
             </div>
+
+            {/* Right Image Section */}
             <div className="flex justify-center md:w-1/2">
-              <div className="relative w-64 h-64 overflow-hidden rounded-full md:w-80 md:h-80">
+              <div 
+                className="relative overflow-hidden border-4 rounded-full shadow-lg border-primary-foreground"
+              >
                 <Image
-                  src="/feriadellibro.jpeg"
+                  src="/alex.jpeg"
                   alt="Foto de Alex"
-                  fill
-                  className="object-cover"
+                  width={300}   // ✅ Explicit width
+                  height={300}  // ✅ Explicit height
+                  className="object-cover rounded-full"
                 />
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
 
       {/* About Section */}
       <section className="flex justify-center py-16 bg-muted">
         <div className="container max-w-3xl px-6 mx-auto text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Sobre mí</h2>
           <div className="mt-6 space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>
-                Soy Alex Zani y nací en un caluroso verano de 1992 en Santiago del Estero. Desde que tengo uso de razón, siempre me gustó leer y escribir, actividades que comencé a realizar desde muy temprana edad. Más tarde que pronto, descubrí la docencia. Esta es mi historia.
-              </p>
-              <p>
-                Me formé en la Licenciatura en Ciencias de la Comunicación en la Universidad de Buenos Aires y, a mitad de mi carrera, obtuve la beca del Programa Iberoamérica de Santander Universidades para un intercambio en España. Radicada en Valencia, descubrí los caminos de la Filosofía de la educación y la Historia del arte. Al regresar, me licencié en la UBA y, junto a compañeros, fundamos un medio digital. La sed de conocimiento me impulsó a postular a la beca de la Fundación Carolina para emprender un Máster en Periodismo en la Universidad CEU-SAN Pablo de Madrid, experiencia que me permitió colaborar durante seis meses en la sección de Cultura del diario El Mundo.
-              </p>
-              <p>
-                De vuelta en Argentina, mi camino académico se enriqueció al convertirme en becaria doctoral por CONICET en el programa de Estudios de Género de la FFyL en la UBA. Integré dos grupos de investigación: uno liderado por la Dra. Marcela País Andrade (CONICET/UBA) mediante la beca UBACyT y otro en el Latin American Interdisciplinary Gender Network coordinado por Helena López (YALE UNIVERSITY/UNAM). Sin embargo, no quise que la academia sofocara mi creatividad, por lo que realicé, en paralelo, una Maestría en Escritura Creativa dirigida por María Negroni en la UNTREF, finalizada en 2024.
-              </p>
-              <p>
-                Durante estos años, he tenido el privilegio de compartir mi pasión por la palabra a través de la docencia. He impartido clases de lectura y escritura académica en la Universidad Nacional de Moreno, la UNTREF y la Universidad de Buenos Aires, donde fui docente del Taller de TIF orientado a la producción de textos. La docencia me ha llevado a cruzar fronteras: fui invitada a dar charlas en la Universidad de Virginia (USA) y a exponer en la Universidad Nacional Autónoma de México, gracias a CLACSO. Actualmente, en FLACSO Argentina, estoy a cargo del Módulo de Periodismo Narrativo en el posgrado "Escrituras: creatividad humana y comunicación" y coordino talleres de escritura creativa, tanto virtuales como presenciales, en encuentros íntimos con el poder transformador del lenguaje.
-              </p>
-              <p>
-              La escritura siempre ha sido mi refugio y mi forma de conectar con el mundo. He plasmado mi sentir en tres poemarios: Justo antes de olvidar mi nombre (Elemento Disruptivo, 2018), El cero es un número natural (Concreto, 2020) y Al filo de la visión (Concreto, 2023). Mis versos también han encontrado hogar en la revista Hablar de poesía (nº 40, 2019), en el Tomo 2 de De la cultura al feminismo (2021) y en la antología CAMPO. 100 poemas sobre la tierra. 100 poetas argentinxs (Camalote, 2022). Entre los reconocimientos que he recibido destacan el galardón a la Convocatoria Epistolar por el CCR y el Goethe Institut (2020), el Primer Premio de Ensayos Estímulo CBC, UBA, el Segundo premio al Concurso de Cuentos de la Academia Nacional de Ciencias de Córdoba y una mención en el Certamen Nacional de Literatura Osvaldo Bayer 2023. He compartido mi pasión en charlas sobre género y literatura en espacios como la FILBA, FILFEM, INADI y la Academia Mexicana de la Historia, y he tenido el honor de moderar y leer poesía en eventos destacados, como el Festival Tiempo de Mujeres (México) y en el MUAC. También curé y conduje el podcast <Link href="https://open.spotify.com/playlist/01xXeNm4u04jNzKcSNPqJO">Poesía Ya! Latinoamérica camino al 8M</Link> para el Centro Cultural Kirchner.
-              </p>
-              <p>
-              El periodismo me abrió otra ventana al mundo. Cofundé el medio digital La Primera Piedra, donde dirigí la sección de Cultura entre 2014 y 2017, y desde entonces he colaborado con numerosos medios nacionales e internacionales. En 2019, tuve el gusto de co-conducir el programa Patriarcadas en Trilce Radio, junto a Rocío Prim y Maru Lijalad. Mi paso por el diario El Mundo en Madrid me permitió sumergirme en la redacción de notas, y mis colaboraciones se extendieron a agencias y medios como Presentes, Buenos Aires Herald, Subida de Línea, El Liberal, Relatto, Missing Perspectives y El grito del sur. Una anécdota que atesoro es haber compartido un cafecito en Madrid con Fran Lebowitz, experiencia que se transformó en <Link href="https://www.elmundo.es/cultura/2018/06/28/5b33dc97468aeb01028b457e.html">una nota para El Mundo.</Link>
-              </p>
-              <p>
-              Cada capítulo de mi vida se escribe día a día, entre la pasión por las letras y el compromiso con el saber. En estos últimos años, he descubierto que el camino académico no es solo intelectual, sino también emocional, y está profundamente atravesado por la creatividad. Tengo el firme compromiso de socializar lo aprendido y de ayudar a otrxs a cumplir sus objetivos. En esta página encontrarán mis propuestas, fruto de un camino que busca conectar, transformar y encender nuevas historias.
-              </p>
+            {/* Always Visible Content */}
+            <p>
+              Soy Alex Zani y nací en un caluroso verano de 1992 en Santiago del Estero. Desde que tengo uso de razón, siempre me gustó leer y escribir, actividades que comencé a realizar desde muy temprana edad. Más tarde que pronto, descubrí la docencia. Esta es mi historia.
+            </p>
+            <p>
+              Me formé en la Licenciatura en Ciencias de la Comunicación en la Universidad de Buenos Aires y, a mitad de mi carrera, obtuve la beca del Programa Iberoamérica de Santander Universidades para un intercambio en España. Radicada en Valencia, descubrí los caminos de la Filosofía de la educación y la Historia del arte. Al regresar, me licencié en la UBA y, junto a compañeros, fundamos un medio digital. La sed de conocimiento me impulsó a postular a la beca de la Fundación Carolina para emprender un Máster en Periodismo en la Universidad CEU-SAN Pablo de Madrid, experiencia que me permitió colaborar durante seis meses en la sección de Cultura del diario El Mundo.
+            </p>
+            <p>
+              De vuelta en Argentina, mi camino académico se enriqueció al convertirme en becaria doctoral por CONICET en el programa de Estudios de Género de la FFyL en la UBA. Integré dos grupos de investigación: uno liderado por la Dra. Marcela País Andrade (CONICET/UBA) mediante la beca UBACyT y otro en el Latin American Interdisciplinary Gender Network coordinado por Helena López (YALE UNIVERSITY/UNAM). Sin embargo, no quise que la academia sofocara mi creatividad, por lo que realicé, en paralelo, una Maestría en Escritura Creativa dirigida por María Negroni en la UNTREF, finalizada en 2024.
+            </p>
+
+            {/* Show more content only when clicked */}
+            {showFullText && (
+              <>
+                <p>
+                  Durante estos años, he tenido el privilegio de compartir mi pasión por la palabra a través de la docencia. He impartido clases de lectura y escritura académica en la Universidad Nacional de Moreno, la UNTREF y la Universidad de Buenos Aires, donde fui docente del Taller de TIF orientado a la producción de textos. La docencia me ha llevado a cruzar fronteras: fui invitada a dar charlas en la Universidad de Virginia (USA) y a exponer en la Universidad Nacional Autónoma de México, gracias a CLACSO. Actualmente, en FLACSO Argentina, estoy a cargo del Módulo de Periodismo Narrativo en el posgrado "Escrituras: creatividad humana y comunicación" y coordino talleres de escritura creativa, tanto virtuales como presenciales, en encuentros íntimos con el poder transformador del lenguaje.
+                </p>
+                <p>
+                  La escritura siempre ha sido mi refugio y mi forma de conectar con el mundo. He plasmado mi sentir en tres poemarios: Justo antes de olvidar mi nombre (Elemento Disruptivo, 2018), El cero es un número natural (Concreto, 2020) y Al filo de la visión (Concreto, 2023). Mis versos también han encontrado hogar en la revista Hablar de poesía (nº 40, 2019), en el Tomo 2 de De la cultura al feminismo (2021) y en la antología CAMPO. 100 poemas sobre la tierra. 100 poetas argentinxs (Camalote, 2022). Entre los reconocimientos que he recibido destacan el galardón a la Convocatoria Epistolar por el CCR y el Goethe Institut (2020), el Primer Premio de Ensayos Estímulo CBC, UBA, el Segundo premio al Concurso de Cuentos de la Academia Nacional de Ciencias de Córdoba y una mención en el Certamen Nacional de Literatura Osvaldo Bayer 2023. He compartido mi pasión en charlas sobre género y literatura en espacios como la FILBA, FILFEM, INADI y la Academia Mexicana de la Historia, y he tenido el honor de moderar y leer poesía en eventos destacados, como el Festival Tiempo de Mujeres (México) y en el MUAC. También curé y conduje el podcast <Link href="https://open.spotify.com/playlist/01xXeNm4u04jNzKcSNPqJO">Poesía Ya! Latinoamérica camino al 8M</Link> para el Centro Cultural Kirchner.
+                </p>
+                <p>
+                  El periodismo me abrió otra ventana al mundo. Cofundé el medio digital La Primera Piedra, donde dirigí la sección de Cultura entre 2014 y 2017, y desde entonces he colaborado con numerosos medios nacionales e internacionales. En 2019, tuve el gusto de co-conducir el programa Patriarcadas en Trilce Radio, junto a Rocío Prim y Maru Lijalad. Mi paso por el diario El Mundo en Madrid me permitió sumergirme en la redacción de notas, y mis colaboraciones se extendieron a agencias y medios como Presentes, Buenos Aires Herald, Subida de Línea, El Liberal, Relatto, Missing Perspectives y El grito del sur. Una anécdota que atesoro es haber compartido un cafecito en Madrid con Fran Lebowitz, experiencia que se transformó en <Link href="https://www.elmundo.es/cultura/2018/06/28/5b33dc97468aeb01028b457e.html">una nota para El Mundo.</Link>
+                </p>
+                <p>
+                  Cada capítulo de mi vida se escribe día a día, entre la pasión por las letras y el compromiso con el saber. En estos últimos años, he descubierto que el camino académico no es solo intelectual, sino también emocional, y está profundamente atravesado por la creatividad. Tengo el firme compromiso de socializar lo aprendido y de ayudar a otrxs a cumplir sus objetivos. En esta página encontrarán mis propuestas, fruto de un camino que busca conectar, transformar y encender nuevas historias.
+                </p>
+              </>
+            )}
+
+            {/* "Leer más" Button (disappears after click) */}
+            {!showFullText && (
+              <button
+                onClick={() => setShowFullText(true)}
+                className="mt-4 font-semibold text-blue-600 transition-all hover:underline hover:text-blue-800"
+              >
+                Leer más ➜
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -127,15 +157,6 @@ export default function Home() {
             <div className="flex items-center justify-center w-32 h-32">
               <Image
                 src="/logos/UNM.png?height=128&width=128"
-                alt="Logo Universidad 4"
-                width={128}
-                height={128}
-                className="object-contain transition-all grayscale hover:grayscale-0"
-              />
-            </div>
-            <div className="flex items-center justify-center w-32 h-32">
-              <Image
-                src="/logos/UNTREF.png?height=128&width=128"
                 alt="Logo Universidad 4"
                 width={128}
                 height={128}

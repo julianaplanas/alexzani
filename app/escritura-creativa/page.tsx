@@ -98,9 +98,6 @@ export default function EscrituraCreativa() {
         <div className="container px-4 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4">Libros Publicados</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground">
-              Explora mis obras publicadas y adquiérelas directamente en las editoriales.
-            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

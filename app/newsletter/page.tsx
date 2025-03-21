@@ -1,31 +1,84 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Mail, CheckCircle, BookOpen, PenTool, ArrowRight } from "lucide-react"
+import { useState } from "react";
 
 export default function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<{ success: boolean; message: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !email.includes("@")) {
+      setStatus({ success: false, message: "Por favor, ingresa un correo válido." });
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ success: true, message: "¡Gracias por suscribirte!" });
+        setEmail(""); // Clear input field
+      } else {
+        setStatus({ success: false, message: data.error || "Hubo un error, intenta de nuevo." });
+      }
+    } catch (error) {
+      setStatus({ success: false, message: "Error al conectar con el servidor." });
+    }
+  };
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-16 bg-secondary md:py-24">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-col items-center max-w-3xl mx-auto space-y-6 text-center">
-            <div className="flex items-center justify-center w-16 h-16 mb-4 bg-white rounded-full">
-              <Mail className="w-8 h-8 text-secondary-foreground" />
+      <section className="py-16 text-center bg-blue-100">
+        <div className="max-w-2xl mx-auto">
+          <div className="mb-6">
+            <div className="flex justify-center">
+              <div className="p-4 bg-white rounded-full shadow-md">
+                📩
+              </div>
             </div>
-            <h1 className="text-secondary-foreground">Sumate al Newsletter</h1>
-            <p className="text-lg text-secondary-foreground/90">
-              Permitime acompañarte en tu proceso de escritura creativa y/o académica. 
-            </p>
-            <div className="flex flex-col w-full max-w-md gap-3 sm:flex-row">
-              <Input type="email" placeholder="Tu correo electrónico" className="bg-white" />
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 whitespace-nowrap">
-                Suscribirme
-              </Button>
-            </div>
-            <p className="text-xs text-secondary-foreground/70">
-              Nunca recibirás un correo spam. En este espacio te compartiré mis mejores consejos, estrategias accionables y reflexiones sobre cómo gestionar el tiempo, aplicar estrategias prácticas de escritura y obtener los resultados que buscas. 
+            <h2 className="mt-4 text-3xl font-bold">Sumate al Newsletter</h2>
+            <p className="text-gray-600">
+              Permitime acompañarte en tu proceso de escritura creativa y/o académica.
             </p>
           </div>
+
+          {/* FORM */}
+          <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3 mx-auto sm:flex-row">
+            <Input
+              type="email"
+              placeholder="Tu correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 bg-white border border-gray-300 rounded-md"
+              required
+            />
+            <Button type="submit" className="px-4 py-2 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 whitespace-nowrap">
+              Suscribirme
+            </Button>
+          </form>
+
+          {/* Status Messages */}
+          {status && (
+            <p className={`text-sm mt-2 ${status.success ? "text-green-600" : "text-red-600"}`}>
+              {status.message}
+            </p>
+          )}
+
+          <p className="mt-4 text-sm text-gray-500">
+            Nunca recibirás spam. Solo compartiré consejos útiles sobre escritura.
+          </p>
         </div>
       </section>
 

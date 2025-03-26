@@ -1,10 +1,23 @@
+"use client"
+import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, BookOpen, FileText, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function RumboALaTesis() {
-  return (
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.setAttribute("src", "https://www.instagram.com/embed.js")
+    script.setAttribute("async", "")
+    document.body.appendChild(script)
+  
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+    
+  return ( 
     <div>
       {/* Hero Section */}
       <section className="py-16 bg-primary md:py-24">

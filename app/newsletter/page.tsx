@@ -40,13 +40,11 @@ export default function Newsletter() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-16 text-center bg-blue-100">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-16 overflow-hidden text-center bg-blue-100">
+        <div className="w-full max-w-2xl px-4 mx-auto">
           <div className="mb-6">
             <div className="flex justify-center">
-              <div className="p-4 bg-white rounded-full shadow-md">
-                📩
-              </div>
+              <div className="p-4 bg-white rounded-full shadow-md">📩</div>
             </div>
             <h2 className="mt-4 text-3xl font-bold">Sumate al Newsletter</h2>
             <p className="text-gray-600">
@@ -55,16 +53,22 @@ export default function Newsletter() {
           </div>
 
           {/* FORM */}
-          <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3 mx-auto sm:flex-row">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center"
+          >
             <Input
               type="email"
               placeholder="Tu correo electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 bg-white border border-gray-300 rounded-md"
+              className="flex-1 w-full p-3 bg-white border border-gray-300 rounded-md"
               required
             />
-            <Button type="submit" className="px-4 py-2 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 whitespace-nowrap">
+            <Button
+              type="submit"
+              className="px-4 py-3 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 whitespace-nowrap"
+            >
               Suscribirme
             </Button>
           </form>
@@ -81,6 +85,7 @@ export default function Newsletter() {
           </p>
         </div>
       </section>
+
 
       {/* Benefits Section */}
       <section className="py-16">
